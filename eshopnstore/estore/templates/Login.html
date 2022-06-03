@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container-fluid mx-auto col-lg-6">
+    <div class="alert alert-warning" role="alert">
+     {{error}}
+    </div>
+  <form class="mx-3" method="POST" action="/login">
+      {% csrf_token %}
+  <div class="mb-3">
+  <label for="email" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="email" name="email"  placeholder="e.g @gmail.com" value="{{value.email}}">
+  </div>
+ <div class="mb-3">
+  <label for="pass" class="form-label">Password</label>
+  <input type="password" class="form-control" id="pass" name="pass"  placeholder="e.g Password">
+  </div>
+
+  <input class="btn btn-primary" type="submit" value="Login"></input>
+
+ </form>
+</div>
+</div>
+{% endblock %}

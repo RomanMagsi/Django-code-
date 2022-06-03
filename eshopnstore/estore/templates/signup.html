@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="fluid-container col-lg-6 col-md-8 col-sm-8 col-mx-8 mx-auto border border-2">
+  <div class="alert alert-warning" role="alert">
+    {{error}}
+  </div>
+
+    <form class="mx-3" method="POST" action="/signup">
+       {% csrf_token %}
+   <div class="mb-3">
+  <label for="name" class="form-label">Name</label>
+  <input type="text" class="form-control" id="name" name="name" placeholder="e.g Usman" value="{{value.fname}}">
+  </div>
+  <div class="mb-3">
+  <label for="email" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="email" name="email"  placeholder="e.g @gmail.com" value="{{value.email}}">
+  </div>
+  <div class="mb-3">
+  <label for="phone" class="form-label">Phone</label>
+  <input type="number" class="form-control" id="phone" name="phone"  placeholder="e.g 03XX-XXXXXX-X" value="{{value.phone}}">
+  </div>
+ <div class="mb-3">
+  <label for="pass" class="form-label">Password</label>
+  <input type="password" class="form-control" id="pass" name="pass"  placeholder="e.g Password">
+  </div>
+  <div class="mb-3">
+  <label for="passa" class="form-label">Password (Retype)</label>
+  <input type="password" class="form-control" id="passa" name="passa" placeholder="e.g Password">
+  </div>
+
+  <input class="btn btn-primary" type="submit" value="Create An Account"></input>
+
+ </form>
+
+</div>
+
+{% endblock %}

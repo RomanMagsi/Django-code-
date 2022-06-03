@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <!--categories comes here-->
+<div class="container-fluid">
+    <div class="row">
+         <!--List-->
+  <div class="col-lg-3">
+   <div class="list-group">
+     {% for ctr in category%}
+     <a href="/?category={{ctr.id}}" class="list-group-item list-group-item-action" aria-current="true">
+      {{ctr.name}}
+  </a>
+     {% endfor %}
+
+
+</div>
+  </div>
+ <!--Products-->
+  <div class="col-lg-9">
+        <div class="container-fluid mx-25">
+       <div class="row">
+         {% for product in products%}
+         <div class="card" style="width: 18rem;">
+  <img src="{{product.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.price}}</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div>
+            {% endfor %}
+       </div>
+   </div>
+  </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
